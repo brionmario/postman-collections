@@ -1,2 +1,3 @@
-# postman-collections
-A repo to house important postman collections
+# Postman Collections
+
+A repo to house important postman collections.
