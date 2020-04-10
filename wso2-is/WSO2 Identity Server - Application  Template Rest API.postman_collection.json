@@ -1,0 +1,570 @@
+{
+	"info": {
+		"_postman_id": "a8a279cf-490c-4fb7-a560-9848c83168b8",
+		"name": "WSO2 Identity Server - Application  Template Rest API",
+		"description": "This document specifies a **Application Template Management RESTful API** for **WSO2 Identity Server** .\n\n\nContact Support:\n Name: WSO2\n Email: architecture@wso2.org",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "templates",
+			"item": [
+				{
+					"name": "{template Id}",
+					"item": [
+						{
+							"name": "Retrieve template by id",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{password}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "{{username}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://{{server-url}}/t/{{tenant-domain}}/api/server/v1/applications/templates/:id",
+									"protocol": "https",
+									"host": [
+										"{{server-url}}"
+									],
+									"path": [
+										"t",
+										"{{tenant-domain}}",
+										"api",
+										"server",
+										"v1",
+										"applications",
+										"templates",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "864e908f-63ca-4161-a56b-ec08e2571bc8"
+										}
+									]
+								},
+								"description": "This API provides the capability to retrieve the application template information by id."
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a template by id",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "{{password}}",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "{{username}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://{{server-url}}/t/{{tenant-domain}}/api/server/v1/applications/templates/:id",
+									"protocol": "https",
+									"host": [
+										"{{server-url}}"
+									],
+									"path": [
+										"t",
+										"{{tenant-domain}}",
+										"api",
+										"server",
+										"v1",
+										"applications",
+										"templates",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "480da372-a23a-48d4-837e-6c65cd87fbe6"
+										}
+									]
+								},
+								"description": "This API provides the capability to delete an application template by id.\n"
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "4ba78c2b-422a-4f4f-90d2-8b1dd30a2f61",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "c0391389-6881-44a1-ad5c-f0df44697adf",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"protocolProfileBehavior": {},
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "List Templates",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{server-url}}/t/{{tenant-domain}}/api/server/v1/applications/templates",
+							"protocol": "https",
+							"host": [
+								"{{server-url}}"
+							],
+							"path": [
+								"t",
+								"{{tenant-domain}}",
+								"api",
+								"server",
+								"v1",
+								"applications",
+								"templates"
+							]
+						},
+						"description": "This API provides the capability to retrieve the list of templates.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Add OIDC Web App Template",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"OIDC web application\",\n    \"description\": \"Regular web applications which uses redirections inside browsers.\",\n    \"image\": \"oidcWebApp\",\n    \"authenticationProtocol\": \"oidc\",\n    \"types\": [\n        \"java\", \"dotNet\"\n    ],\n    \"category\": \"Server Template\",\n    \"displayOrder\": 1,\n    \"application\": {\n        \"name\": \"\",\n        \"advancedConfigurations\": {\n            \"discoverableByEndUsers\": false\n        },\n        \"authenticationSequence\": {\n            \"type\": \"DEFAULT\",\n            \"steps\": [\n                {\n                    \"id\": 1,\n                    \"options\": [\n                        {\n                            \"idp\": \"LOCAL\",\n                            \"authenticator\": \"basic\"\n                        }\n                    ]\n                }\n            ]\n        },\n        \"inboundProtocolConfiguration\": {\n            \"oidc\": {\n                \"grantTypes\": [\n                    \"authorization_code\"\n                ],\n                \"publicClient\": false\n            }\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{server-url}}/t/{{tenant-domain}}/api/server/v1/applications/templates",
+							"protocol": "https",
+							"host": [
+								"{{server-url}}"
+							],
+							"path": [
+								"t",
+								"{{tenant-domain}}",
+								"api",
+								"server",
+								"v1",
+								"applications",
+								"templates"
+							]
+						},
+						"description": "This API provides the capability to create a template for OIDC web applications.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Add SAML Web App Template",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"SAML web application\",\n    \"description\": \"Regular web applications which uses redirections inside browsers.\",\n    \"image\": \"samlWebApp\",\n    \"authenticationProtocol\": \"saml\",\n    \"types\": [\n        \"java\",\n        \"dotNet\"\n    ],\n    \"category\": \"Server Template\",\n    \"displayOrder\": 2,\n    \"application\": {\n        \"name\": \"\",\n        \"advancedConfigurations\": {\n            \"discoverableByEndUsers\": false\n        },\n        \"authenticationSequence\": {\n            \"type\": \"DEFAULT\",\n            \"steps\": [\n                {\n                    \"id\": 1,\n                    \"options\": [\n                        {\n                            \"idp\": \"LOCAL\",\n                            \"authenticator\": \"basic\"\n                        }\n                    ]\n                }\n            ]\n        },\n        \"inboundProtocolConfiguration\": {\n            \"saml\": {\n                \"manualConfiguration\": {\n                    \"issuer\": \"\",\n                    \"assertionConsumerUrls\": [\n                        \"\"\n                    ]\n                }\n            }\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{server-url}}/t/{{tenant-domain}}/api/server/v1/applications/templates",
+							"protocol": "https",
+							"host": [
+								"{{server-url}}"
+							],
+							"path": [
+								"t",
+								"{{tenant-domain}}",
+								"api",
+								"server",
+								"v1",
+								"applications",
+								"templates"
+							]
+						},
+						"description": "This API provides the capability to create a template for SAML web applications.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Add SPA Template",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Single page application\",\n    \"description\": \"Front end applications which uses APIs. Mostly written using scripting languages.\",\n    \"image\": \"spa\",\n    \"authenticationProtocol\": \"oidc\",\n    \"types\": [\n        \"react\", \"angular\", \"vue\"\n    ],\n    \"category\": \"Server Template\",\n    \"displayOrder\": 3,\n    \"application\": {\n        \"name\": \"\",\n        \"advancedConfigurations\": {\n            \"discoverableByEndUsers\": false\n        },\n        \"authenticationSequence\": {\n            \"type\": \"DEFAULT\",\n            \"steps\": [\n                {\n                    \"id\": 1,\n                    \"options\": [\n                        {\n                            \"idp\": \"LOCAL\",\n                            \"authenticator\": \"basic\"\n                        }\n                    ]\n                }\n            ]\n        },\n        \"inboundProtocolConfiguration\": {\n            \"oidc\": {\n                \"grantTypes\": [\n                    \"authorization_code\"\n                ],\n                \"publicClient\": true\n            }\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{server-url}}/t/{{tenant-domain}}/api/server/v1/applications/templates",
+							"protocol": "https",
+							"host": [
+								"{{server-url}}"
+							],
+							"path": [
+								"t",
+								"{{tenant-domain}}",
+								"api",
+								"server",
+								"v1",
+								"applications",
+								"templates"
+							]
+						},
+						"description": "This API provides the capability to create a template for SPA applications.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Windows Deskop Template",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Windows desktop application\",\n    \"description\": \"Applications developed to target windows desktops.\",\n    \"image\": \"windowsNative\",\n    \"authenticationProtocol\": \"oidc\",\n    \"types\": [\n        \"dotNet\"\n    ],\n    \"category\": \"Server Template\",\n    \"displayOrder\": 4,\n    \"application\": {\n        \"name\": \"\",\n        \"advancedConfigurations\": {\n            \"discoverableByEndUsers\": false\n        },\n        \"authenticationSequence\": {\n            \"type\": \"DEFAULT\",\n            \"steps\": [\n                {\n                    \"id\": 1,\n                    \"options\": [\n                        {\n                            \"idp\": \"LOCAL\",\n                            \"authenticator\": \"basic\"\n                        }\n                    ]\n                }\n            ]\n        },\n        \"inboundProtocolConfiguration\": {\n            \"oidc\": {\n                \"grantTypes\": [\n                    \"authorization_code\"\n                ],\n                \"publicClient\": false\n            }\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{server-url}}/t/{{tenant-domain}}/api/server/v1/applications/templates",
+							"protocol": "https",
+							"host": [
+								"{{server-url}}"
+							],
+							"path": [
+								"t",
+								"{{tenant-domain}}",
+								"api",
+								"server",
+								"v1",
+								"applications",
+								"templates"
+							]
+						},
+						"description": "This API provides the capability to create a template for Windows Desktop applications.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Add WS Trust Template",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"WS Trust application\",\n    \"description\": \"Web applications which uses security tokens\",\n    \"image\": \"wsTrust\",\n    \"authenticationProtocol\": \"ws-trust\",\n    \"types\": [\n        \"java\",\n        \"dotNet\"\n    ],\n    \"category\": \"Server Template\",\n    \"displayOrder\": 5,\n    \"application\": {\n        \"name\": \"\",\n        \"advancedConfigurations\": {\n            \"discoverableByEndUsers\": false\n        },\n        \"authenticationSequence\": {\n            \"type\": \"DEFAULT\",\n            \"steps\": [\n                {\n                    \"id\": 1,\n                    \"options\": [\n                        {\n                            \"idp\": \"LOCAL\",\n                            \"authenticator\": \"basic\"\n                        }\n                    ]\n                }\n            ]\n        },\n        \"inboundProtocolConfiguration\": {\n            \"wsTrust\": {\n                \"audience\": \"\",\n                \"certificateAlias\": \"\"\n            }\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{server-url}}/t/{{tenant-domain}}/api/server/v1/applications/templates",
+							"protocol": "https",
+							"host": [
+								"{{server-url}}"
+							],
+							"path": [
+								"t",
+								"{{tenant-domain}}",
+								"api",
+								"server",
+								"v1",
+								"applications",
+								"templates"
+							]
+						},
+						"description": "This API provides the capability to create a template for WS Trust applications.\n"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Passive STS Template",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{username}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Passive STS web application\",\n    \"description\": \"Web applications which uses security tokens.\",\n    \"image\": \"passiveSTS\",\n    \"authenticationProtocol\": \"passive-sts\",\n    \"types\": [\n        \"java\",\n        \"dotNet\"\n    ],\n    \"category\": \"Server Template\",\n    \"displayOrder\": 6,\n    \"application\": {\n        \"name\": \"\",\n        \"inboundProtocolConfiguration\": {\n            \"passiveSts\": {}\n        },\n        \"authenticationSequence\": {\n            \"type\": \"DEFAULT\",\n            \"steps\": [\n                {\n                    \"id\": 1,\n                    \"options\": [\n                        {\n                            \"idp\": \"LOCAL\",\n                            \"authenticator\": \"basic\"\n                        }\n                    ]\n                }\n            ],\n            \"subjectStepId\": 1,\n            \"attributeStepId\": 1\n        },\n        \"advancedConfigurations\": {\n            \"discoverableByEndUsers\": false\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{server-url}}/t/{{tenant-domain}}/api/server/v1/applications/templates",
+							"protocol": "https",
+							"host": [
+								"{{server-url}}"
+							],
+							"path": [
+								"t",
+								"{{tenant-domain}}",
+								"api",
+								"server",
+								"v1",
+								"applications",
+								"templates"
+							]
+						},
+						"description": "This API provides the capability to create a template for Passive STS applications.\n"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "9080283e-6a05-4af7-9ccd-3e62d89ec633",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "4abf8a4c-1292-45f6-bd47-6a7b0b1df4b2",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "d87f7635-3c21-4411-b595-5fe6f9a3f79d",
+			"key": "tenant-domain",
+			"value": "carbon.super",
+			"type": "string"
+		},
+		{
+			"id": "67cd70a9-8cb3-487e-98a2-39b5316ac85e",
+			"key": "server-url",
+			"value": "localhost:9443",
+			"type": "string"
+		},
+		{
+			"id": "7d98ce13-9295-4aa1-80fe-460e7d8a16b3",
+			"key": "baseUrl",
+			"value": "https://{{server-url}}/t/{{tenant-domain}}/api/server/v1",
+			"type": "string"
+		},
+		{
+			"id": "33bf5efe-757c-4762-abb5-2fad12001f07",
+			"key": "username",
+			"value": "admin",
+			"type": "string"
+		},
+		{
+			"id": "8cb62006-bcab-4e2b-80c5-c57be6e3a3e2",
+			"key": "password",
+			"value": "admin",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
