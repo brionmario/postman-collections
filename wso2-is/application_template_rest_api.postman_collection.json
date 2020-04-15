@@ -201,7 +201,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"OIDC web application\",\n    \"description\": \"Regular web applications which uses redirections inside browsers.\",\n    \"image\": \"oidcWebApp\",\n    \"authenticationProtocol\": \"oidc\",\n    \"types\": [\n        \"java\", \"dotNet\"\n    ],\n    \"category\": \"Server Template\",\n    \"displayOrder\": 1,\n    \"application\": {\n        \"name\": \"\",\n        \"advancedConfigurations\": {\n            \"discoverableByEndUsers\": false\n        },\n        \"authenticationSequence\": {\n            \"type\": \"DEFAULT\",\n            \"steps\": [\n                {\n                    \"id\": 1,\n                    \"options\": [\n                        {\n                            \"idp\": \"LOCAL\",\n                            \"authenticator\": \"basic\"\n                        }\n                    ]\n                }\n            ]\n        },\n        \"inboundProtocolConfiguration\": {\n            \"oidc\": {\n                \"grantTypes\": [\n                    \"authorization_code\"\n                ],\n                \"publicClient\": false\n            }\n        }\n    }\n}",
+							"raw": "{\n    \"name\": \"OIDC web application\",\n    \"description\": \"Regular web applications which uses redirections inside browsers.\",\n    \"image\": \"oidcWebApp\",\n    \"authenticationProtocol\": \"oidc\",\n    \"types\": [\n        \"java\", \"dotNet\"\n    ],\n    \"category\": \"DEFAULT\",\n    \"displayOrder\": 1,\n    \"application\": {\n        \"name\": \"\",\n        \"advancedConfigurations\": {\n            \"discoverableByEndUsers\": false\n        },\n        \"authenticationSequence\": {\n            \"type\": \"DEFAULT\",\n            \"steps\": [\n                {\n                    \"id\": 1,\n                    \"options\": [\n                        {\n                            \"idp\": \"LOCAL\",\n                            \"authenticator\": \"basic\"\n                        }\n                    ]\n                }\n            ]\n        },\n        \"inboundProtocolConfiguration\": {\n            \"oidc\": {\n                \"grantTypes\": [\n                    \"authorization_code\"\n                ],\n                \"publicClient\": false\n            }\n        }\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -257,7 +257,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"SAML web application\",\n    \"description\": \"Regular web applications which uses redirections inside browsers.\",\n    \"image\": \"samlWebApp\",\n    \"authenticationProtocol\": \"saml\",\n    \"types\": [\n        \"java\",\n        \"dotNet\"\n    ],\n    \"category\": \"Server Template\",\n    \"displayOrder\": 2,\n    \"application\": {\n        \"name\": \"\",\n        \"advancedConfigurations\": {\n            \"discoverableByEndUsers\": false\n        },\n        \"authenticationSequence\": {\n            \"type\": \"DEFAULT\",\n            \"steps\": [\n                {\n                    \"id\": 1,\n                    \"options\": [\n                        {\n                            \"idp\": \"LOCAL\",\n                            \"authenticator\": \"basic\"\n                        }\n                    ]\n                }\n            ]\n        },\n        \"inboundProtocolConfiguration\": {\n            \"saml\": {\n                \"manualConfiguration\": {\n                    \"issuer\": \"\",\n                    \"assertionConsumerUrls\": [\n                        \"\"\n                    ]\n                }\n            }\n        }\n    }\n}",
+							"raw": "{\n    \"name\": \"SAML web application\",\n    \"description\": \"Regular web applications which uses redirections inside browsers.\",\n    \"image\": \"samlWebApp\",\n    \"authenticationProtocol\": \"saml\",\n    \"types\": [\n        \"java\",\n        \"dotNet\"\n    ],\n    \"category\": \"DEFAULT\",\n    \"displayOrder\": 2,\n    \"application\": {\n        \"name\": \"\",\n        \"advancedConfigurations\": {\n            \"discoverableByEndUsers\": false\n        },\n        \"authenticationSequence\": {\n            \"type\": \"DEFAULT\",\n            \"steps\": [\n                {\n                    \"id\": 1,\n                    \"options\": [\n                        {\n                            \"idp\": \"LOCAL\",\n                            \"authenticator\": \"basic\"\n                        }\n                    ]\n                }\n            ]\n        },\n        \"inboundProtocolConfiguration\": {\n            \"saml\": {\n                \"manualConfiguration\": {\n                    \"issuer\": \"\",\n                    \"assertionConsumerUrls\": [\n                        \"\"\n                    ]\n                }\n            }\n        }\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -313,7 +313,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"Single page application\",\n    \"description\": \"Front end applications which uses APIs. Mostly written using scripting languages.\",\n    \"image\": \"spa\",\n    \"authenticationProtocol\": \"oidc\",\n    \"types\": [\n        \"react\", \"angular\", \"vue\"\n    ],\n    \"category\": \"Server Template\",\n    \"displayOrder\": 3,\n    \"application\": {\n        \"name\": \"\",\n        \"advancedConfigurations\": {\n            \"discoverableByEndUsers\": false\n        },\n        \"authenticationSequence\": {\n            \"type\": \"DEFAULT\",\n            \"steps\": [\n                {\n                    \"id\": 1,\n                    \"options\": [\n                        {\n                            \"idp\": \"LOCAL\",\n                            \"authenticator\": \"basic\"\n                        }\n                    ]\n                }\n            ]\n        },\n        \"inboundProtocolConfiguration\": {\n            \"oidc\": {\n                \"grantTypes\": [\n                    \"authorization_code\"\n                ],\n                \"publicClient\": true\n            }\n        }\n    }\n}",
+							"raw": "{\n    \"name\": \"Single page application\",\n    \"description\": \"Front end applications which uses APIs. Mostly written using scripting languages.\",\n    \"image\": \"spa\",\n    \"authenticationProtocol\": \"oidc\",\n    \"types\": [\n        \"react\", \"angular\", \"vue\"\n    ],\n    \"category\": \"DEFAULT\",\n    \"displayOrder\": 3,\n    \"application\": {\n        \"name\": \"\",\n        \"advancedConfigurations\": {\n            \"discoverableByEndUsers\": false\n        },\n        \"authenticationSequence\": {\n            \"type\": \"DEFAULT\",\n            \"steps\": [\n                {\n                    \"id\": 1,\n                    \"options\": [\n                        {\n                            \"idp\": \"LOCAL\",\n                            \"authenticator\": \"basic\"\n                        }\n                    ]\n                }\n            ]\n        },\n        \"inboundProtocolConfiguration\": {\n            \"oidc\": {\n                \"grantTypes\": [\n                    \"authorization_code\"\n                ],\n                \"publicClient\": true\n            }\n        }\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -369,7 +369,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"Windows desktop application\",\n    \"description\": \"Applications developed to target windows desktops.\",\n    \"image\": \"windowsNative\",\n    \"authenticationProtocol\": \"oidc\",\n    \"types\": [\n        \"dotNet\"\n    ],\n    \"category\": \"Server Template\",\n    \"displayOrder\": 4,\n    \"application\": {\n        \"name\": \"\",\n        \"advancedConfigurations\": {\n            \"discoverableByEndUsers\": false\n        },\n        \"authenticationSequence\": {\n            \"type\": \"DEFAULT\",\n            \"steps\": [\n                {\n                    \"id\": 1,\n                    \"options\": [\n                        {\n                            \"idp\": \"LOCAL\",\n                            \"authenticator\": \"basic\"\n                        }\n                    ]\n                }\n            ]\n        },\n        \"inboundProtocolConfiguration\": {\n            \"oidc\": {\n                \"grantTypes\": [\n                    \"authorization_code\"\n                ],\n                \"publicClient\": false\n            }\n        }\n    }\n}",
+							"raw": "{\n    \"name\": \"Windows desktop application\",\n    \"description\": \"Applications developed to target windows desktops.\",\n    \"image\": \"windowsNative\",\n    \"authenticationProtocol\": \"oidc\",\n    \"types\": [\n        \"dotNet\"\n    ],\n    \"category\": \"DEFAULT\",\n    \"displayOrder\": 4,\n    \"application\": {\n        \"name\": \"\",\n        \"advancedConfigurations\": {\n            \"discoverableByEndUsers\": false\n        },\n        \"authenticationSequence\": {\n            \"type\": \"DEFAULT\",\n            \"steps\": [\n                {\n                    \"id\": 1,\n                    \"options\": [\n                        {\n                            \"idp\": \"LOCAL\",\n                            \"authenticator\": \"basic\"\n                        }\n                    ]\n                }\n            ]\n        },\n        \"inboundProtocolConfiguration\": {\n            \"oidc\": {\n                \"grantTypes\": [\n                    \"authorization_code\"\n                ],\n                \"publicClient\": false\n            }\n        }\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -425,7 +425,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"WS Trust application\",\n    \"description\": \"Web applications which uses security tokens\",\n    \"image\": \"wsTrust\",\n    \"authenticationProtocol\": \"ws-trust\",\n    \"types\": [\n        \"java\",\n        \"dotNet\"\n    ],\n    \"category\": \"Server Template\",\n    \"displayOrder\": 5,\n    \"application\": {\n        \"name\": \"\",\n        \"advancedConfigurations\": {\n            \"discoverableByEndUsers\": false\n        },\n        \"authenticationSequence\": {\n            \"type\": \"DEFAULT\",\n            \"steps\": [\n                {\n                    \"id\": 1,\n                    \"options\": [\n                        {\n                            \"idp\": \"LOCAL\",\n                            \"authenticator\": \"basic\"\n                        }\n                    ]\n                }\n            ]\n        },\n        \"inboundProtocolConfiguration\": {\n            \"wsTrust\": {\n                \"audience\": \"\",\n                \"certificateAlias\": \"\"\n            }\n        }\n    }\n}",
+							"raw": "{\n    \"name\": \"WS Trust application\",\n    \"description\": \"Web applications which uses security tokens\",\n    \"image\": \"wsTrust\",\n    \"authenticationProtocol\": \"ws-trust\",\n    \"types\": [\n        \"java\",\n        \"dotNet\"\n    ],\n    \"category\": \"DEFAULT\",\n    \"displayOrder\": 5,\n    \"application\": {\n        \"name\": \"\",\n        \"advancedConfigurations\": {\n            \"discoverableByEndUsers\": false\n        },\n        \"authenticationSequence\": {\n            \"type\": \"DEFAULT\",\n            \"steps\": [\n                {\n                    \"id\": 1,\n                    \"options\": [\n                        {\n                            \"idp\": \"LOCAL\",\n                            \"authenticator\": \"basic\"\n                        }\n                    ]\n                }\n            ]\n        },\n        \"inboundProtocolConfiguration\": {\n            \"wsTrust\": {\n                \"audience\": \"\",\n                \"certificateAlias\": \"\"\n            }\n        }\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -481,7 +481,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\": \"Passive STS web application\",\n    \"description\": \"Web applications which uses security tokens.\",\n    \"image\": \"passiveSTS\",\n    \"authenticationProtocol\": \"passive-sts\",\n    \"types\": [\n        \"java\",\n        \"dotNet\"\n    ],\n    \"category\": \"Server Template\",\n    \"displayOrder\": 6,\n    \"application\": {\n        \"name\": \"\",\n        \"inboundProtocolConfiguration\": {\n            \"passiveSts\": {}\n        },\n        \"authenticationSequence\": {\n            \"type\": \"DEFAULT\",\n            \"steps\": [\n                {\n                    \"id\": 1,\n                    \"options\": [\n                        {\n                            \"idp\": \"LOCAL\",\n                            \"authenticator\": \"basic\"\n                        }\n                    ]\n                }\n            ],\n            \"subjectStepId\": 1,\n            \"attributeStepId\": 1\n        },\n        \"advancedConfigurations\": {\n            \"discoverableByEndUsers\": false\n        }\n    }\n}",
+							"raw": "{\n    \"name\": \"Passive STS web application\",\n    \"description\": \"Web applications which uses security tokens.\",\n    \"image\": \"passiveSTS\",\n    \"authenticationProtocol\": \"passive-sts\",\n    \"types\": [\n        \"java\",\n        \"dotNet\"\n    ],\n    \"category\": \"DEFAULT\",\n    \"displayOrder\": 6,\n    \"application\": {\n        \"name\": \"\",\n        \"inboundProtocolConfiguration\": {\n            \"passiveSts\": {}\n        },\n        \"authenticationSequence\": {\n            \"type\": \"DEFAULT\",\n            \"steps\": [\n                {\n                    \"id\": 1,\n                    \"options\": [\n                        {\n                            \"idp\": \"LOCAL\",\n                            \"authenticator\": \"basic\"\n                        }\n                    ]\n                }\n            ],\n            \"subjectStepId\": 1,\n            \"attributeStepId\": 1\n        },\n        \"advancedConfigurations\": {\n            \"discoverableByEndUsers\": false\n        }\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -536,31 +536,31 @@
 	],
 	"variable": [
 		{
-			"id": "d87f7635-3c21-4411-b595-5fe6f9a3f79d",
+			"id": "a2462374-b04b-4975-83b9-4a310c508008",
 			"key": "tenant-domain",
 			"value": "carbon.super",
 			"type": "string"
 		},
 		{
-			"id": "67cd70a9-8cb3-487e-98a2-39b5316ac85e",
+			"id": "16930c28-5db7-419d-8774-6c8dc01cde19",
 			"key": "server-url",
 			"value": "localhost:9443",
 			"type": "string"
 		},
 		{
-			"id": "7d98ce13-9295-4aa1-80fe-460e7d8a16b3",
+			"id": "aeb4ef63-6c8a-4e22-b779-7c19206dbd64",
 			"key": "baseUrl",
 			"value": "https://{{server-url}}/t/{{tenant-domain}}/api/server/v1",
 			"type": "string"
 		},
 		{
-			"id": "33bf5efe-757c-4762-abb5-2fad12001f07",
+			"id": "8dd34331-dc78-4000-a92d-71387bf1a1b5",
 			"key": "username",
 			"value": "admin",
 			"type": "string"
 		},
 		{
-			"id": "8cb62006-bcab-4e2b-80c5-c57be6e3a3e2",
+			"id": "8598e9c3-f6ae-45c1-9ed9-153c56269f0c",
 			"key": "password",
 			"value": "admin",
 			"type": "string"
